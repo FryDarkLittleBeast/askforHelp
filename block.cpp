@@ -10,7 +10,7 @@ Block::~Block()
 {
 }
 
-auto Block::toJson() ->std::unique_ptr<picojson::value>
+auto Block::toJson() ->picojson::value
 {
     picojson::object pos;
     pos.insert(std::make_pair("row", picojson::value(this->pos.row)));
@@ -19,5 +19,5 @@ auto Block::toJson() ->std::unique_ptr<picojson::value>
     picojson::object obj;
     obj.insert(std::make_pair("type", picojson::value(this->type)));
     obj.insert(std::make_pair("pos", pos));
-    return std::make_unique<picojson::value>(obj);
+    return picojson::value(obj);
 }

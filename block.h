@@ -24,5 +24,5 @@ private:
 public:
     Block(const int block_type,Position pos);
     ~Block();
-    auto toJson() ->std::unique_ptr<picojson::value>;
+    auto toJson() ->picojson::value;
 };
