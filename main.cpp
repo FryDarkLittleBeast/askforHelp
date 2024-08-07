@@ -70,8 +70,7 @@ picojson::value genJsonObj(const vector<vector<Block>> &blockList)
         for (size_t j = 0; j < row->size(); j++)
         {
             auto block = (*row)[j];
-            auto block_json=block.toJson();
-            cout<< *block_json;
+            cout<< *std::move(block.toJson());
             // json_row.push_back(block_json);
         }
         cout<<picojson::value(json_row);
